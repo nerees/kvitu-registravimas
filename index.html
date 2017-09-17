@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="LT">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ===========================
+    INFORMACIJA
+    =========================== -->    
+    <meta name="description" content="KALĖDINIS LOTO, Registruok pirkimo kvitą ir laimėk vertingus prizus">
+    <meta name="keywords" content="Kalėdos, Kalėdinis, loterija, loto">
+        
+    <!-- ===========================
+    PUSLAPIO PAVADINIMAS
+    =========================== -->
+    <title>LOTERIJA - Registruok pirkimo kvitą ir laimėk!</title>
+    
+    <!-- ===========================
+    FAVICONS
+    =========================== -->
+    <link rel="icon" href="img/favicon.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/apple-touch-icon-ipad-retina.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-iphone-retina.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-ipad.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="img/apple-touch-icon-iphone.png" />
+    
+    <!-- ===========================
+    STYLESHEETS
+    =========================== --> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animate.css">        
+    
+    <!-- ===========================
+    FONTS
+    =========================== -->
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,900,600|Pacifico' rel='stylesheet' type='text/css'>
+    <!-- ===========================
+    SCRIPTS
+    =========================== --> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src='https://www.google.com/recaptcha/api.js'></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="js/evenfly.js"></script>
+    <script src="js/jquery.nicescroll.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/snowstorm-min.js"></script>
+		<script>
+		$(function () {
+		$("#form").on("submit", function () {
+        $.ajax({
+            type: "post",
+            url: "process.php",
+            data: $(this).serialize(),
+            success: function (response) {
+                if (response == "done") {
+                    alert("AČIŪ! Jūsų kvitas užregistruotas, sekmės!");
+					$('#kvnr').val(''); //išvalom kvito numerio laukelį, galim registruoti naują kvitą
+                } else {
+                    alert("Klaida! Toks kvito numeris jau buvo užregistruotas."); //kvito numeris jau egzistuoja
+                }
+            },
+            error: function (response) {
+                alert(response);
+            }
+        });
+        return false;
+		});
+		});
+		</script>
+    <script>new WOW().init();</script>    
+</head>
+
+<body>
+    <!-- ===========================
+    HERO SECTION
+    =========================== -->
+    <div id="hero">
+        <div class="redoverlay">
+            <div class="container">
+                <div class="row">
+                    <div class="herotext">
+                        <h2 class="wow zoomInDown" data-wow-duration="3s">Rink 'PARDUOTUVĖS' kvitus, registruok ir laimėk!</h2>
+                        <h1 class="wow flipInY">KALĖDINIS LOTO</h1>
+
+                        <a class="btn btn-reverse wow zoomIn" href="#products">
+                            <h3>Registruoti <span class="optional">savo pirkimo</span> kvitą!</h3>                            
+                        </a><!--#NOTE: texts inside the OPTIONAL tag above would be hidden on smaller mobile screens -->
+
+                        <p class="wow fadeInUp" data-wow-duration="2s">Loterija vyksta iki gruodžio 25 dienos</p>
+
+                        <img class="bigbell wow tada infinite" data-wow-duration="30s" src="img/bell.png" alt="">
+                    </div>
+
+                    <div class="santa wow bounceInDown" data-wow-duration="2s">
+                        <img src="img/santa.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!--HERO SECTION END-->
+    
+    <!-- ===========================
+    OVERVIEW SECTION
+    =========================== --> 
+    <div id="overview" class="container">       
+        <!--SECTIONHEAD START-->
+        <div class="sectionhead">            
+            <h2>Jūsų laukia vertingi <span class="highlight">prizai</span> !</h2>
+            <p>Visi svetainėje registruoti 'PARDUOTUVĖS' pirkimo kvitai, dalyvauja loterijoje ir turės galimybę laimėti gausybę vertingų prizų!</p>
+            <hr>
+        </div><!--SECTIONHEAD END-->
+        
+        <!--SMALL ITEM 1ST ROW START-->
+        <div class="row moreitems">
+            <!--SMALL ITEM 1 START-->
+            <div class="col-md-6">
+                <!--SMALL PRODUCT IMAGE START-->
+                <div class="col-md-4 text-center">
+                    <a href="">
+                        <img class="productimg" src="img/prize1.png" alt="Laimėk!">
+                    </a>
+
+                    <!--DISCOUNT TAG-->
+                    <div class="smalltag offertag fixedoffer">
+                        <h4>10</h4>
+                        <p>VNT</p>
+                    </div><!--DISCOUNT TAG END-->
+                </div><!--PRODUCT IMAGE END-->
+
+                <!--SMALL PRODUCT DESCRIPTION START-->
+                <div class="col-md-8">
+                    <h4><a href="">Prizas numeris 1</a></h4>
+                    <p>Prizo aprašymas Prizo aprašymas Prizo aprašymas Prizo aprašymas Prizo aprašymas Prizo aprašymas Prizo aprašymas Prizo aprašymas</p>
+                    <p class="price"><span class="highlight">Prizas</span> Nr. 1</p>
+                    <p>Net 10 laimingųjų laimės šiuos puikius prizus</p>
+                </div><!--SMALL PRODUCT DESCRIPTION END-->
+            </div><!--SMALL ITEM 1 END-->
+
+            <!--SMALL ITEM 2 START-->
+            <div class="col-md-6">
+                <!--SMALL PRODUCT IMAGE START-->
+                <div class="col-md-4 text-center">
+                    <a href="">
+                        <img class="productimg" src="img/prize2.png" alt="Laimėk!">
+                    </a>
+
+                    <!--DISCOUNT TAG-->
+                    <div class="smalltag offertag percentoffer">
+                        <h4>20</h4>
+                        <p>VNT.</p>
+                    </div><!--DISCOUNT TAG END-->
+                </div><!--PRODUCT IMAGE END-->
+
+                <!--SMALL PRODUCT DESCRIPTION START-->
+                <div class="col-md-8">
+                    <h4><a href="">Prizas Numeris 2</a></h4>
+                    <p>Prizo 2 aprašymas Prizo 2 aprašymas Prizo 2 aprašymas Prizo 2 aprašymas Prizo 2 aprašymas Prizo 2 aprašymas Prizo 2 aprašymas.</p>
+                    <p class="price"><span class="highlight">PRIZAS</span> Nr. 2</p>
+                    <p>Net 20 laimingųjų laimės šiuos puikius prizus.</p>
+                </div><!--SMALL PRODUCT DESCRIPTION END-->
+            </div><!--SMALL ITEM 2 END-->
+        </div><!--SMALL ITEM 1ST ROW END-->
+
+        <!--SMALL ITEM 2ND ROW START-->
+        <div class="row moreitems">
+            <!--SMALL ITEM 3 START-->
+            <div class="col-md-6">
+                <!--SMALL PRODUCT IMAGE START-->
+                <div class="col-md-4 text-center">
+                    <a href="">
+                        <img class="productimg" src="img/prize3.png" alt="Laimėk!">
+                    </a>
+
+                    <!--DISCOUNT TAG-->
+                    <div class="smalltag offertag otheroffer">
+                        <h4>30</h4>
+                        <p>VNT.</p>
+                    </div><!--DISCOUNT TAG END-->
+                </div><!--PRODUCT IMAGE END-->
+
+                <!--SMALL PRODUCT DESCRIPTION START-->
+                <div class="col-md-8">
+                    <h4><a href="">Prizas numeris 3</a></h4>
+                    <p>prizo aprašymas prizo aprašymas prizo aprašymas prizo aprašymas prizo aprašymas prizo aprašymas prizo aprašymas prizo aprašymas</p>
+                    <p class="price"><span class="highlight">PRIZAS</span> Nr. 3</p>
+                    <p>Net trisdešimt laimingųjų laimės šį puikų prizą</p>
+                </div><!--SMALL PRODUCT DESCRIPTION END-->
+            </div><!--SMALL ITEM 3 END-->
+
+            <!--SMALL ITEM 4 START-->
+            <div class="col-md-6">
+                <!--SMALL PRODUCT IMAGE START-->
+                <div class="col-md-4 text-center">
+                    <a href="">
+                        <img class="productimg" src="img/prize4.png" alt="Laimėk!">
+                    </a>
+
+                    <!--DISCOUNT TAG-->
+                    <div class="smalltag offertag fixedoffer">
+                        <h4>40</h4>
+                        <p>VNT.</p>
+                    </div><!--DISCOUNT TAG-->
+                </div><!--PRODUCT IMAGE END-->
+
+                <!--SMALL PRODUCT DESCRIPTION START-->
+                <div class="col-md-8">
+                    <h4><a href="">Prizas numeris 4</a></h4>
+                    <p>Prizo numeris 4 aprašymas Prizo numeris 4 aprašymas Prizo numeris 4 aprašymas Prizo numeris 4 aprašymas Prizo numeris 4 aprašymas</p>
+                    <p class="price"><span class="highlight">PRIZAS</span>Nr. 4</p>
+                    <p>Net 40 šių puikių prizų pasieks Jūsų namus</p>
+                </div><!--SMALL PRODUCT DESCRIPTION END-->
+            </div><!--SMALL ITEM 4 END-->
+        </div><!--SMALL ITEM 2ND ROW END-->
+    </div><!--PRODUCTS SECTION END-->
+    <hr>
+	<!--KVITO REGISTRAVIMO FORMA-->  
+	<div id="products" class="container text-center"> 
+	<div class="lightoverlay">
+	<div class="sectionhead">            
+            <h2>Noriu <span class="highlight">registruoti</span> pirkimo kvitą</h2>
+            <p>Loterijoje gali dalyvauti tik 'PARDUOTUVĖS' pirkimo kvitai.</p>
+            <hr>
+                   
+                    <form id="form"><!-- #NOTE: Replace this with your Mailchimp action URL -->
+                            <input type="text" value="" name="FNAME" id="fname" placeholder="Vardas" required>                          
+                            <input type="email" value="" name="EMAIL" id="email" placeholder="El. pašto adresas" required>
+							<input type="tel" value="" name="TEL" id="tel" placeholder="Telefono Nr." pattern='^\+?\d{0,11}' required>
+							<input type="text" value="" name="KVNR" id="kvnr" placeholder="Kvito numeris" autocomplete="off" required><br>
+                            <center><div class="g-recaptcha" data-sitekey="6Ldz_zAUAAAAAPIyIoO5ouAOm_M8YOgtZg1zFiFo"></div></center><br>
+							<input type="submit" id="send" value="Registruoti" class="btn btn-inverse">
+                    </form>
+				   
+	</div>
+	</div>	
+	</div>			
+<!--KVITO REGISTRAVIMO FORMA pabaiga-->				
+    <!-- ===========================
+    SUBSCRIBE SECTION
+    =========================== -->
+    <div id="subscribe">
+        <div class="darkoverlay">
+            <div class="container text-center">
+                <img class="santaicon wow tada infinite" data-wow-duration="20s" src="img/santa-sm.png" alt="">
+                <div class="sectionhead">            
+                    <h2>Prenumeruok <span class="oprional"> <span class="highlight">'PARDUOTUVĖS'</span> </span>naujienas!</h2>
+                    <p>Tiesiog įveskite savo el. pašto adresą. Mes pasirupinsime, kad pirmieji sužinotumėte apie vykstančias akcijas bei specialius pasiūlymus. Naujienų prenumeratos galėsite atsisakyti vos tik panorėję.</p>    
+                </div><!--SECTIONHEAD END-->            
+
+                <!--SUBSCRIBE FORM START-->  
+                <div class="mailchimp">
+                    <form action="" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate><!-- #NOTE: Replace this with your Mailchimp action URL -->
+                                                      
+                            <input type="email" value="" name="EMAIL" id="mce-EMAIL" placeholder="El. pašto adresas" required>
+                            <input type="submit" value="Prenumeruoti" name="subscribe" id="mc-embedded-subscribe" class="btn btn-inverse">
+                    </form>
+                </div>
+            </div><!--SUBSCRIBE CONTAINER END-->
+        </div><!--OVERLAY END-->
+    </div><!--SUBSCRIBE SECTION END-->        
+    
+    <!-- ===========================
+    FOOTER
+    =========================== -->
+    <footer class="container text-center">             
+        <h2 class="logo"><span class="highlight">'PARDUOTUVĖ'</span></h2>
+        <img class="santacap" src="img/santa_cap.png" alt="">
+        <P> Greita ir patogu <a href="http://parduotuve.lt">'PARDUOTUVĖ'</a> !</P>
+        <hr>
+    </footer><!--FOOTER END-->
+    
+    <!-- ===========================
+    SOCIAL ICONS
+    =========================== -->
+    <div class="sticky-container">
+		<ul class="sticky">
+			<li>
+				<a href="duom.php">
+                    <img title="" alt="" src="img/login.svg" />
+                    <p>Prisijungti</p>
+				</a>
+			</li>
+			
+		</ul>
+	</div>
+   
+</body>
+</html>
