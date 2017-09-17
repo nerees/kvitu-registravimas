@@ -1,44 +1,22 @@
-body {font-family: Helvetica, Arial, sans-serif;}
-
-a {color: #000;}
-
-
-
-a:hover {
-
-    color: #f53f2c;
-
-    text-decoration: none;
-
-    -webkit-transition: .5s ease-out;
-
-    -moz-transition: .5s ease-out;
-
-    -o-transition: .5s ease-out;
-
-    transition: .5s ease-out;
-
-}
-
-
-
-a:visited{
-
-    text-decoration: none
-
-}
-
-
-
-.highlight {color: #f53f2c;}
-
-h1 {font-size: 138px;}
-
-h2 {font-family: 'Pacifico', cursive;}
-
-h4 {font-weight: 600;}
-
-
-
-
-
+body {font-family: Helvetica, Arial, sans-serif;}
+a {color: #000;}
+
+a:hover {
+    color: #f53f2c;
+    text-decoration: none;
+    -webkit-transition: .5s ease-out;
+    -moz-transition: .5s ease-out;
+    -o-transition: .5s ease-out;
+    transition: .5s ease-out;
+}
+
+a:visited{
+    text-decoration: none
+}
+
+.highlight {color: #f53f2c;}
+h1 {font-size: 138px;}
+h2 {font-family: 'Pacifico', cursive;}
+h4 {font-weight: 600;}
+
+
